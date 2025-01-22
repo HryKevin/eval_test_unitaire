@@ -3,10 +3,24 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassToEval", "ClassToEval\ClassToEval.csproj", "{40601829-6CD7-4F96-88A1-0DCAB1CABA45}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassToEvalTests", "ClassToEvalTests\ClassToEvalTests.csproj", "{D3404285-9FEC-48FB-BDDD-95FEC4A61CA1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{40601829-6CD7-4F96-88A1-0DCAB1CABA45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40601829-6CD7-4F96-88A1-0DCAB1CABA45}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40601829-6CD7-4F96-88A1-0DCAB1CABA45}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40601829-6CD7-4F96-88A1-0DCAB1CABA45}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D3404285-9FEC-48FB-BDDD-95FEC4A61CA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3404285-9FEC-48FB-BDDD-95FEC4A61CA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3404285-9FEC-48FB-BDDD-95FEC4A61CA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3404285-9FEC-48FB-BDDD-95FEC4A61CA1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
