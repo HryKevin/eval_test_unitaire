@@ -10,22 +10,13 @@ namespace ClassToEvalTests
     [TestClass]
     public class ReservationTests
     {
-
-        //[TestMethod]
-        //public class Reservation_WithMadeBy_ReturnString()
-        //{
-        //    Reservation _reservation = new Reservation(new User);
-        //}
-
         [TestMethod]
         public void CanBeCancelledBy_UserIsAdmin_ReturnsTrue()
         {
             var adminUser = new User { IsAdmin = true };
             var reservation = new Reservation(new User());
 
-            var result = reservation.CanBeCancelledBy(adminUser);
-
-            Assert.IsTrue(result);
+            Assert.IsTrue(reservation.CanBeCancelledBy(adminUser));
         }
 
         [TestMethod]
@@ -34,9 +25,7 @@ namespace ClassToEvalTests
             var ownerUser = new User { IsAdmin = false };
             var reservation = new Reservation(ownerUser);
 
-            var result = reservation.CanBeCancelledBy(ownerUser);
-
-            Assert.IsTrue(result);
+            Assert.IsTrue(reservation.CanBeCancelledBy(ownerUser));
         }
 
         [TestMethod]
@@ -46,23 +35,25 @@ namespace ClassToEvalTests
             var otherUser = new User { IsAdmin = false };
             var reservation = new Reservation(ownerUser);
 
-            var result = reservation.CanBeCancelledBy(otherUser);
+            Assert.IsFalse(reservation.CanBeCancelledBy(otherUser));
+        }
 
-            Assert.IsFalse(result);
+        [TestMethod]
+        public void CanBeCancelledBy_ReservationMadeByIsNull_ReturnsFalse()
+        {
+            var otherUser = new User { IsAdmin = false };
+            var reservation = new Reservation(null); 
+
+            Assert.IsFalse(reservation.CanBeCancelledBy(otherUser));
         }
 
         [TestMethod]
         public void CanBeCancelledBy_AdminWithMadeByNull_ReturnsTrue()
         {
-            // Arrange
             var adminUser = new User { IsAdmin = true };
-            var reservation = new Reservation(null); 
+            var reservation = new Reservation(null);
 
-            // Act
-            var result = reservation.CanBeCancelledBy(adminUser);
-
-            // Assert
-            Assert.IsTrue(result, "An admin should always be able to cancel a reservation, even if MadeBy is null.");
+            Assert.IsTrue(reservation.CanBeCancelledBy(adminUser));
         }
     }
 }
